@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Herrera | Desarrollador de Software</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="cssPortafolio.css">
+    <style>
+        #modal-carousel-image {
+            max-height: 80vh; 
+            width: auto;    
+            display: block;  
+            margin: 0 auto;  
+        }
+
+        .modal-container {
+            max-height: 90vh; 
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-secondary/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#inicio" class="text-2xl font-bold accent-color">DH</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#sobre-mi" class="hover:accent-color transition-colors duration-300">Sobre Mí</a>
+                <a href="#habilidades" class="hover:accent-color transition-colors duration-300">Habilidades</a>
+                <a href="#proyectos" class="hover:accent-color transition-colors duration-300">Proyectos</a>
+                <a href="#contacto" class="hover:accent-color transition-colors duration-300">Contacto</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary">
+            <a href="#sobre-mi" class="block text-center py-3 hover:bg-blue-900/50 transition-colors">Sobre Mí</a>
+            <a href="#habilidades" class="block text-center py-3 hover:bg-blue-900/50 transition-colors">Habilidades</a>
+            <a href="#proyectos" class="block text-center py-3 hover:bg-blue-900/50 transition-colors">Proyectos</a>
+            <a href="#contacto" class="block text-center py-3 hover:bg-blue-900/50 transition-colors">Contacto</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <section id="inicio" class="min-h-screen flex items-center justify-center p-6">
+            <div class="flex flex-col items-center md:flex-row md:justify-around md:items-center w-full"> 
+                <div class="max-w-4xl text-center md:text-left mb-8 md:mb-0 md:mr-8">
+                    <p class="accent-color text-lg mb-4">Hola, mi nombre es</p>
+                    <h1 class="text-4xl md:text-7xl font-black text-lightest mb-2">David Herrera Valdes.</h1>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-400 mb-6">
+                        <span id="typing-text"></span><span class="typing-cursor"></span>
+                    </h2>
+                    
+                   
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="#proyectos" class="bg-transparent border-2 border-accent text-accent font-bold py-3 px-6 rounded-lg hover:bg-accent/10 transition-all duration-300">
+                            Ver mis Proyectos
+                        </a>
+                    </div>
+                    <div class="mt-8 flex space-x-6 justify-center md:justify-start">
+                        <a href="https://github.com/DavidHerrera-Ing" target="_blank" class="text-2xl hover:accent-color transition-colors" aria-label="Mi perfil de GitHub"><i class="fab fa-github"></i></a>
+                        <button id="open-contact-modal-email" class="text-2xl hover:accent-color transition-colors" aria-label="Mostrar información de correo"><i class="fas fa-envelope"></i></button>
+                        <button id="open-contact-modal-phone" class="text-2xl hover:accent-color transition-colors" aria-label="Mostrar información de teléfono"><i class="fas fa-phone"></i></button>
+                    </div>
+                </div>
+
+                <div class="flex-shrink-0 mt-8 md:mt-0 md:ml-12">
+                    <img src="Imagenes/imagen1.jpg" alt="Imagen representativa de David Herrera" class="hero-image">
+                </div>
+            </div>
+        </section>
+
+        <section id="sobre-mi" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-lightest mb-8 text-center">Sobre Mí</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-2/3">
+                    <p class="mb-4">
+                        Soy David, estudiante de Ingeniería en Informática en el Instituto Profesional Santo Tomás. Mi formación me ha dado una base sólida en desarrollo web (HTML, CSS, JavaScript, PHP) y me ha permitido explorar áreas que me apasionan como el Internet de las Cosas (IoT) y la gestión de datos.
+                    </p>
+                    <p class="mb-4">
+                        Disfruto resolviendo problemas complejos, trabajando en equipo y aprendiendo constantemente nuevas tecnologías para construir aplicaciones funcionales y eficientes. Siempre estoy buscando nuevos desafíos para expandir mis conocimientos y aplicarlos en proyectos prácticos.
+                    </p>
+                </div>
+                <div class="md:w-1/3 flex justify-center">
+                    <div class="w-64 h-64 rounded-full overflow-hidden border-4 border-accent">
+                        <img src="Imagenes/fotoPerfil.jpeg" alt="Foto de David Herrera" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="habilidades" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-lightest mb-12 text-center">Habilidades Técnicas</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 text-center">
+                <div class="flex flex-col items-center gap-2"> <i class="fab fa-html5 text-5xl accent-color"></i><span>HTML</span> </div>
+                <div class="flex flex-col items-center gap-2"> <i class="fab fa-css3-alt text-5xl accent-color"></i><span>CSS</span> </div>
+                <div class="flex flex-col items-center gap-2"> <i class="fab fa-js-square text-5xl accent-color"></i><span>JavaScript</span> </div>
+                <div class="flex flex-col items-center gap-2"> <i class="fab fa-php text-5xl accent-color"></i><span>PHP</span> </div>
+                <div class="flex flex-col items-center gap-2"> <i class="fas fa-database text-5xl accent-color"></i><span>MySQL</span> </div>
+                <div class="flex flex-col items-center gap-2"> <i class="fab fa-microsoft text-5xl accent-color"></i><span>Azure</span> </div>
+                <div class="flex flex-col items-center gap-2"> <i class="fas fa-microchip text-5xl accent-color"></i><span>IoT</span> </div>
+                <div class="flex flex-col items-center gap-2"> <i class="fas fa-code text-5xl accent-color"></i><span>C++</span> </div>
+            </div>
+        </section>
+
+        <section id="habilidades-blandas" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-lightest mb-12 text-center">Habilidades Blandas</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-secondary rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-pencil-ruler text-4xl accent-color mb-4"></i>
+                    <h3 class="text-xl font-bold text-lightest mb-2">Diseño de Software y Base de Datos</h3>
+                    <p class="text-light">Capacidad fundamental para estructurar y modelar sistemas eficientes y bases de datos robustas.</p>
+                </div>
+                <div class="bg-secondary rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-comments text-4xl accent-color mb-4"></i>
+                    <h3 class="text-xl font-bold text-lightest mb-2">Comunicación Efectiva</h3>
+                    <p class="text-light">Habilidad para transmitir ideas complejas de forma clara y concisa, tanto a equipos técnicos como a usuarios finales.</p>
+                </div>
+                <div class="bg-secondary rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-lightbulb text-4xl accent-color mb-4"></i>
+                    <h3 class="text-xl font-bold text-lightest mb-2">Resolución de Problemas</h3>
+                    <p class="text-light">Enfoque lógico y creativo para identificar, analizar y solucionar desafíos técnicos.</p>
+                </div>
+                <div class="bg-secondary rounded-lg p-6 text-center hover:shadow-xl transition-shadow duration-300">
+                    <i class="fas fa-handshake text-4xl accent-color mb-4"></i>
+                    <h3 class="text-xl font-bold text-lightest mb-2">Trabajo en Equipo</h3>
+                    <p class="text-light">Colaboración activa y contribución positiva en entornos multidisciplinarios.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyectos" class="py-24 fade-in-section">
+            <h2 class="text-3xl font-bold text-lightest mb-12 text-center">Proyectos Destacados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="project-card bg-secondary rounded-lg p-4 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                    data-title="Sistema de Inventario con IoT y Azure"
+                    data-image="./Imagenes/iot1.jpg" data-role="Gerente del Proyecto"
+                    data-description="Desarrollo de un sistema que mide el peso de productos en tiempo real mediante sensores conectados a un NodeMCU. Los datos se almacenan en Excel y se integran con Power Automate, Azure Speech y whapi.cloud.
+El usuario puede enviar texto o audio por WhatsApp; el mensaje es procesado por IA para interpretar la consulta, buscar en la base de datos y generar una respuesta precisa."
+                    data-technologies="NodeMCU, Azure, Power Automate, Sensores de Peso"
+                    data-carousel-images="Imagenes/iot1.jpg,Imagenes/iot2.jpg,Imagenes/azure1.png,Imagenes/azure2.png"> 
+                    <div>
+                        <img src="./Imagenes/iot1.jpg" alt="Preview del proyecto de inventario" class="rounded-md mb-3">
+                        <h3 class="text-lg font-bold text-lightest mb-1">Inventario IoT & Azure</h3>
+                        <p class="text-sm text-gray-400 description-short mb-3">
+                            Sistema para medir peso en tiempo real con sensores y NodeMCU. Integrado con Power Automate y Azure Speech para consultas de stock vía WhatsApp.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-xs accent-color mb-3">NodeMCU · Azure · Power Automate</p>
+                        <button class="open-modal-button text-sm accent-color font-bold hover:underline">Ver Detalles →</button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-secondary rounded-lg p-4 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                    data-title="E-commerce Funcional"
+                    data-image="./Imagenes/ProyectoWeb.png"
+                    data-role="Desarrollador Web"
+                    data-description="Creación de una tienda online desde cero para simular una experiencia de compra real. Implementé el catálogo de productos con detalles y precios, un sistema de carrito de compras persistente, gestión de stock en la base de datos y una simulación de pasarela de pago para finalizar la compra."
+                    data-technologies="HTML, CSS, JavaScript, PHP, MySQL"
+                    data-github="https://github.com/DavidHerrera-Ing/Proyecto-web.git"> 
+                    <div>
+                        <img src="./Imagenes/ProyectoWeb.png" alt="Preview del proyecto e-commerce" class="rounded-md mb-3">
+                        <h3 class="text-lg font-bold text-lightest mb-1">Sistema E-commerce</h3>
+                        <p class="text-sm text-gray-400 description-short mb-3">
+                            Simulación de una tienda online completa con catálogo de productos, gestión de stock, descripciones y un carrito de compras funcional.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between"> 
+                        <p class="text-xs accent-color">HTML · CSS · JavaScript · PHP · MySQL</p>
+                        <button class="open-modal-button text-sm accent-color font-bold hover:underline ml-auto">Ver Detalles →</button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-secondary rounded-lg p-4 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                    data-title="App de Consulta de Productos"
+                    data-image="./Imagenes/paginaMovil1.png" 
+                    data-role="Desarrollador Móvil Android"
+                    data-description="Desarrollo de una aplicación nativa para Android que permite a los usuarios buscar productos, ver sus precios, la tienda donde se venden y su ubicación exacta en un mapa integrado. El foco principal fue crear una experiencia de usuario fluida y la correcta integración con APIs de geolocalización para mostrar los datos de forma precisa."
+                    data-technologies="Java, Android Studio, Google Maps API, XML"
+                    data-carousel-images="./Imagenes/paginaMovil1.png,./Imagenes/paginaMovil2.png"
+                    data-github="https://github.com/DavidHerrera-Ing/Proyecto-Movil.git"> <div>
+                        <img src="./Imagenes/paginaMovil1.png" alt="Preview del proyecto móvil" class="rounded-md mb-3"> 
+                        <h3 class="text-lg font-bold text-lightest mb-1">App de Consulta de Productos</h3>
+                        <p class="text-sm text-gray-400 description-short mb-3">
+                            Aplicación móvil para visualizar productos, incluyendo su precio, tienda de origen y la ubicación de la misma en un mapa.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-xs accent-color mb-3">Java · Android Studio · Google Maps API</p>
+                        <button class="open-modal-button text-sm accent-color font-bold hover:underline">Ver Detalles →</button>
+                    </div>
+                </div>
+
+                <div class="project-card bg-secondary rounded-lg p-4 flex flex-col justify-between hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+                    data-title="Prototipo de Tanque Automatizado"
+                    data-image="./Imagenes/tanque1.jpeg" data-role="Encargado de Hardware y Software"
+                    data-description="Prototipo diseñado, construido y programado para operar de forma remota mediante una red Wi-Fi local. El vehículo, con diseño tipo tanque, incorpora funciones de movimiento básico (avance, retroceso y giros laterales), controladas a través de un joystick virtual desde un teléfono móvil.
+Además, integra un sistema de frenado automático que se activa ante detección de obstáculos, mejorando la seguridad y autonomía del sistema."
+                    data-technologies="Arduino, ESP32, C++, HTML, CSS, JavaScript , Sensor de poximidad"
+                    data-carousel-images="./Imagenes/tanque1.jpeg,./Imagenes/tanque2.jpeg,./Imagenes/tanque3.jpeg"
+                    data-github="https://github.com/DavidHerrera-Ing/Proyecto-TanqueIoT.git"> <div>
+                        <img src="./Imagenes/tanque1.jpeg" alt="Preview del proyecto de tanque automatizado" class="rounded-md mb-3">
+                        <h3 class="text-lg font-bold text-lightest mb-1">Prototipo de Tanque Automatizado</h3>
+                        <p class="text-sm text-gray-400 description-short mb-3">
+                            Creación de un prototipo de tanque con funciones de movimiento básico, controlado a distancia a través de una red Wi-Fi local.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-xs accent-color mb-3">Arduino/ESP32 · C++ · Wi-Fi</p>
+                        <button class="open-modal-button text-sm accent-color font-bold hover:underline">Ver Detalles →</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="contacto" class="py-24 text-center fade-in-section">
+            <h2 class="text-3xl font-bold text-lightest mb-4">Ponerse en Contacto</h2>
+            <p class="max-w-xl mx-auto mb-8">Estoy abierto a nuevas oportunidades que me permitan seguir creciendo profesionalmente. Me motiva enfrentar nuevos desafíos, aprender constantemente y aportar con compromiso en cada proyecto.</p>
+        </section>
+
+    </main>
+
+    <footer class="py-6 text-center text-sm">
+        <div class="mb-2 flex justify-center space-x-6">
+            <a href="https://github.com/DavidHerrera-Ing" target="_blank" class="text-xl hover:accent-color transition-colors" aria-label="Mi perfil de GitHub"><i class="fab fa-github"></i></a>
+            <button id="open-contact-modal-footer-email" class="text-xl hover:accent-color transition-colors" aria-label="Mostrar información de correo"><i class="fas fa-envelope"></i></button>
+            <button id="open-contact-modal-footer-phone" class="text-xl hover:accent-color transition-colors" aria-label="Mostrar información de teléfono"><i class="fas fa-phone"></i></button>
+        </div>
+        <p>Diseñado y construido por David Herrera Valdes.</p>
+    </footer>
+
+    <div id="project-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 opacity-0 pointer-events-none z-50">
+        <div class="modal-container bg-secondary w-full max-w-4xl max-h-full rounded-lg shadow-2xl overflow-y-auto opacity-0">
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-lightest"></h2>
+                    <button id="close-project-modal-button" class="text-3xl text-gray-500 hover:text-lightest transition-colors">&times;</button>
+                </div>
+
+                <div class="relative mb-6">
+                    <img id="modal-carousel-image" src="" alt="Imagen del proyecto" class="w-full h-auto rounded-lg border-2 border-gray-700 object-cover">
+                    
+                    <button id="carousel-prev" class="absolute left-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full ml-2 hover:bg-opacity-75 focus:outline-none">
+                        &#10094;
+                    </button>
+                    <button id="carousel-next" class="absolute right-0 top-1/2 -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full mr-2 hover:bg-opacity-75 focus:outline-none">
+                        &#10095;
+                    </button>
+                </div>
+                
+                <h3 class="text-xl font-bold accent-color mb-2">Mi Rol</h3>
+                <p id="modal-role" class="mb-6"></p>
+
+                <h3 class="text-xl font-bold accent-color mb-2">Descripción del Proyecto</h3>
+                <p id="modal-description" class="mb-6"></p>
+
+                <h3 class="text-xl font-bold accent-color mb-2">Tecnologías Utilizadas</h3>
+                <p id="modal-technologies" class="text-light mb-6"></p>
+                <div id="modal-links" class="flex flex-wrap gap-4">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center p-4 opacity-0 pointer-events-none z-50">
+        <div class="modal-container bg-secondary w-full max-w-md rounded-lg shadow-2xl opacity-0">
+            <div class="p-6 md:p-8">
+                <div class="flex justify-between items-start mb-4">
+                    <h2 class="text-2xl md:text-3xl font-bold text-lightest">Contacto</h2>
+                    <button id="close-contact-modal-button" class="text-3xl text-gray-500 hover:text-lightest transition-colors">&times;</button>
+                </div>
+                
+                <div class="mb-6">
+                    <p class="text-lg text-lightest mb-2">
+                        <i class="fas fa-envelope accent-color mr-3"></i> Correo Electrónico:
+                    </p>
+                    <a href="mailto:davidh.ing.informatico@gmail.com" class="text-light text-xl break-all hover:accent-color transition-colors">
+                        davidh.ing.informatico@gmail.com
+                    </a>
+                </div>
+
+                <div>
+                    <p class="text-lg text-lightest mb-2">
+                        <i class="fas fa-phone accent-color mr-3"></i> Teléfono:
+                    </p>
+                    <a href="tel:+56945176816" class="text-light text-xl hover:accent-color transition-colors">
+                        +56 9 4517 6816
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Lógica del Menú Móvil ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // --- Lógica del Efecto de Tipeo ---
+        const typingTextElement = document.getElementById('typing-text');
+        const texts = ["Estudiante de Ing. en Informática."];
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false; 
+
+        function type() {
+            const currentText = texts[textIndex];
+            if (!isDeleting && charIndex < currentText.length) {
+                typingTextElement.textContent += currentText.charAt(charIndex);
+                charIndex++;
+                setTimeout(type, 100);
+            } else if (isDeleting && charIndex > 0) {
+                typingTextElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(type, 50);
+            } else {
+                if (isDeleting) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length; 
+                    setTimeout(type, 500);
+                } else {
+                    if (texts.length > 1) { 
+                        isDeleting = true;
+                        setTimeout(type, 2000);
+                    } else {
+                        setTimeout(() => {
+                            charIndex = 0; 
+                            typingTextElement.textContent = '';
+                            type();
+                        }, 5000); 
+                    }
+                }
+            }
+        }
+        document.addEventListener('DOMContentLoaded', type);
+
+
+        // --- Lógica de Animación al Scroll ---
+        const sections = document.querySelectorAll('.fade-in-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        sections.forEach(section => { observer.observe(section); });
+
+
+        // --- Lógica del Modal de Proyectos (con Carrusel) ---
+        const projectModal = document.getElementById('project-modal');
+        const openProjectModalButtons = document.querySelectorAll('.open-modal-button');
+        const closeProjectModalButton = document.getElementById('close-project-modal-button');
+
+        const modalTitle = document.getElementById('modal-title');
+        const modalCarouselImage = document.getElementById('modal-carousel-image'); 
+        const modalRole = document.getElementById('modal-role');
+        const modalDescription = document.getElementById('modal-description');
+        const modalTechnologies = document.getElementById('modal-technologies');
+        const modalLinks = document.getElementById('modal-links');
+
+        // Nuevas variables para el carrusel
+        const carouselPrevButton = document.getElementById('carousel-prev');
+        const carouselNextButton = document.getElementById('carousel-next');
+        let currentModalImages = []; 
+        let currentModalImageIndex = 0; 
+
+        function openProjectModal(card) {
+            modalTitle.textContent = card.dataset.title;
+            modalRole.textContent = card.dataset.role;
+            modalDescription.textContent = card.dataset.description;
+            modalTechnologies.textContent = card.dataset.technologies;
+
+            // Obtener las imágenes del carrusel del atributo data
+            const carouselImagesData = card.dataset.carouselImages;
+            if (carouselImagesData) {
+                currentModalImages = carouselImagesData.split(',').map(img => img.trim());
+                currentModalImageIndex = 0; 
+                modalCarouselImage.src = currentModalImages[currentModalImageIndex];
+                // Mostrar/ocultar flechas si hay más de una imagen
+                if (currentModalImages.length > 1) {
+                    carouselPrevButton.style.display = 'block';
+                    carouselNextButton.style.display = 'block';
+                } else {
+                    carouselPrevButton.style.display = 'none';
+                    carouselNextButton.style.display = 'none';
+                }
+            } else {
+                // Si no hay data-carousel-images, usar la imagen de data-image y ocultar flechas
+                modalCarouselImage.src = card.dataset.image;
+                currentModalImages = [card.dataset.image]; 
+                currentModalImageIndex = 0;
+                carouselPrevButton.style.display = 'none';
+                carouselNextButton.style.display = 'none';
+            }
+
+
+            modalLinks.innerHTML = '';
+            const githubLink = card.dataset.github;
+            if (githubLink) {
+                const githubButton = document.createElement('a');
+                githubButton.href = githubLink;
+                githubButton.target = '_blank';
+                // AQUI SE CAMBIO LA CLASE PARA QUE EL TEXTO SEA BLANCO
+                githubButton.className = 'bg-accent text-white font-bold py-2 px-4 rounded-lg hover:bg-opacity-80 transition-all duration-300 flex items-center gap-2';
+                githubButton.innerHTML = '<i class="fab fa-github"></i> Ver Código';
+                modalLinks.appendChild(githubButton);
+            }
+
+            projectModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showNextImage() {
+            currentModalImageIndex = (currentModalImageIndex + 1) % currentModalImages.length;
+            modalCarouselImage.src = currentModalImages[currentModalImageIndex];
+        }
+
+        function showPrevImage() {
+            currentModalImageIndex = (currentModalImageIndex - 1 + currentModalImages.length) % currentModalImages.length;
+            modalCarouselImage.src = currentModalImages[currentModalImageIndex];
+        }
+
+        // Event Listeners para las flechas del carrusel
+        carouselNextButton.addEventListener('click', showNextImage);
+        carouselPrevButton.addEventListener('click', showPrevImage);
+
+
+        openProjectModalButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                const card = e.target.closest('.project-card');
+                openProjectModal(card);
+            });
+        });
+
+        closeProjectModalButton.addEventListener('click', closeProjectModal);
+
+        projectModal.addEventListener('click', (e) => {
+            if (e.target === projectModal) {
+                closeProjectModal();
+            }
+        });
+
+        function closeProjectModal() {
+            projectModal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // --- Lógica del Modal de Contacto ---
+        const contactModal = document.getElementById('contact-modal');
+        const openContactModalEmailButton = document.getElementById('open-contact-modal-email');
+        const openContactModalPhoneButton = document.getElementById('open-contact-modal-phone');
+        const openContactModalFooterEmailButton = document.getElementById('open-contact-modal-footer-email');
+        const openContactModalFooterPhoneButton = document.getElementById('open-contact-modal-footer-phone');
+        const closeContactModalButton = document.getElementById('close-contact-modal-button');
+
+        function openContactModal() {
+            contactModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeContactModal() {
+            contactModal.classList.remove('active');
+            document.body.style.overflow = ''; 
+        }
+
+        openContactModalEmailButton.addEventListener('click', openContactModal);
+        openContactModalPhoneButton.addEventListener('click', openContactModal);
+        openContactModalFooterEmailButton.addEventListener('click', openContactModal);
+        openContactModalFooterPhoneButton.addEventListener('click', openContactModal);
+        closeContactModalButton.addEventListener('click', closeContactModal);
+
+        contactModal.addEventListener('click', (e) => {
+            if (e.target === contactModal) {
+                closeContactModal();
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+                closeContactModal();
+            } else if (e.key === 'Escape' && projectModal.classList.contains('active')) {
+                closeProjectModal();
+            }
+        });
+    </script>
+</body>
+</html>
